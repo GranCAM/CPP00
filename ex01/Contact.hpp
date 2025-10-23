@@ -4,6 +4,7 @@
 
 # include <string>
 # include <iostream>
+# include <cctype>
 
 class Contact
 {
@@ -19,6 +20,16 @@ class Contact
 
 		void GetContactInfo();
 		void DisplayContact();
+		
+		std::string GetFirstName() const;
+		std::string GetLastName() const;
+		std::string GetNickname() const;
+		
+	private:
+		bool IsEmpty(const std::string& str) const;
+		bool IsValidPhoneNumber(const std::string& phone) const;
+		std::string GetValidInput(const std::string& prompt) const;
+		std::string GetValidPhoneNumber() const;
 };
 
 #endif

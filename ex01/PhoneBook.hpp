@@ -17,6 +17,7 @@ class PhoneBook
 		void AddContact();
 		void RemovedAddContact();
 		void SearchContacts();
+		std::string LengthPrint(std::string str);
 };
 
 #endif
