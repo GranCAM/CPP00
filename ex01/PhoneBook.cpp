@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: carbon-m <carbon-m@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/24 16:17:20 by carbon-m          #+#    #+#             */
+/*   Updated: 2025/10/24 19:37:02 by carbon-m         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include <iomanip>
 #include "PhoneBook.hpp"
@@ -57,7 +69,8 @@ void PhoneBook::SearchContacts()
     }
     std::cout << "\nEnter contact index to display : ";
     std::cin >> index;
-    if (index >= 0 && index < ContactCount) 
+    std::cout << "tenemos: " << PhoneBook::ContactCount << std::endl;
+    if (index >= 0 && index < ContactCount && index < 8)  
     {
         std::cout << "\n--- Contact Details ---\n";
         Contacts[index].DisplayContact();
