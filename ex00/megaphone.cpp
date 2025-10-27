@@ -6,7 +6,7 @@
 /*   By: carbon-m <carbon-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 16:17:55 by carbon-m          #+#    #+#             */
-/*   Updated: 2025/10/24 16:17:56 by carbon-m         ###   ########.fr       */
+/*   Updated: 2025/10/27 19:13:55 by carbon-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,4 @@ int main(int argc, char **argv)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 		return 0;
 	}
-
 }
