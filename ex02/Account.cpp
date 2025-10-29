@@ -6,7 +6,7 @@
 /*   By: carbon-m <carbon-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 16:16:48 by carbon-m          #+#    #+#             */
-/*   Updated: 2025/10/27 20:48:22 by carbon-m         ###   ########.fr       */
+/*   Updated: 2025/10/29 18:36:32 by carbon-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ void	Account::makeDeposit( int deposit )
 	_totalNbDeposits++;
 	_displayTimestamp();
 	std::cout << "index:" << _accountIndex
-    << ";OriOrigAmount:" << OrigAmount
+    << ";p_amount:" << OrigAmount
     << ";deposit:" << deposit
     << ";amount:" << _amount
     << ";nb_deposits:" << _nbDeposits
@@ -119,11 +119,11 @@ bool	Account::makeWithdrawal( int withdrawal )
 	}
 	_amount -= withdrawal;
 	_totalAmount -= withdrawal;
-	_nbDeposits++;
-	_totalNbDeposits++;
+	_nbWithdrawals++;
+	_totalNbWithdrawals++;
     std::cout << ";withdrawal:" << withdrawal
 	<< ";amount:" << _amount
-    << ";nb_withdrawal:" << _nbWithdrawals
+    << ";nb_withdrawals:" << _nbWithdrawals
 	<< std::endl;
 	return 1;
 }

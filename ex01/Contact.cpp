@@ -6,7 +6,7 @@
 /*   By: carbon-m <carbon-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 16:17:48 by carbon-m          #+#    #+#             */
-/*   Updated: 2025/10/24 16:17:52 by carbon-m         ###   ########.fr       */
+/*   Updated: 2025/10/29 18:28:58 by carbon-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ std::string Contact::GetValidInput(const std::string& prompt) const
 	while (true)
 	{
 		std::cout << prompt;
-		std::getline(std::cin, input);	
+		std::getline(std::cin, input);
 		if (!IsEmpty(input))
 			break;
 		
