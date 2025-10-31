@@ -6,7 +6,7 @@
 /*   By: carbon-m <carbon-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 16:17:20 by carbon-m          #+#    #+#             */
-/*   Updated: 2025/10/24 19:37:02 by carbon-m         ###   ########.fr       */
+/*   Updated: 2025/10/31 13:44:20 by carbon-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ std::string PhoneBook::LengthPrint(std::string str)
 void PhoneBook::SearchContacts() 
 {
     int index;
+    int i;
 
     if (ContactCount == 0) 
     {
@@ -60,7 +61,7 @@ void PhoneBook::SearchContacts()
               << std::setw(10) << "Last Name" << "|"
               << std::setw(10) << "Nickname" << std::endl;
     std::cout << "-------------------------------------------\n";
-    for (int i = 0; i < ContactCount; i++) 
+    for (i = 0; i < ContactCount; i++) 
     {
         std::cout << std::setw(10) << i << "|"
                   << std::setw(10) << LengthPrint(Contacts[i].GetFirstName()) << "|"
@@ -68,8 +69,13 @@ void PhoneBook::SearchContacts()
                   << std::setw(10) << LengthPrint(Contacts[i].GetNickname()) << std::endl;
     }
     std::cout << "\nEnter contact index to display : ";
-    std::cin >> index;
-    std::cout << "tenemos: " << PhoneBook::ContactCount << std::endl;
+    if (!(std::cin >> index)) 
+    {
+        std::cout << "Invalid input! Please enter a number.\n\n";
+        std::cin.clear();
+        std::cin.ignore(10000, '\n');
+        return;
+    }
     if (index >= 0 && index < ContactCount && index < 8)  
     {
         std::cout << "\n--- Contact Details ---\n";
@@ -77,6 +83,6 @@ void PhoneBook::SearchContacts()
         std::cout << std::endl;
     } 
     else
-        std::cout << "Invalid index!\n\n";
+        std::cout << "Invalid index! Please enter a number between 0 and " << (ContactCount - 1) << ".\n\n";
     std::cin.ignore();
 }

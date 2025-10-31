@@ -1,6 +1,6 @@
 NAME = phonebook
 
-CC = c++
+CXX = c++
 
 CCFLAGS = -Wall -Wextra -Werror -std=c++98
 
@@ -11,10 +11,7 @@ OBJECTS = $(SOURCES:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	$(CC) $(CCFLAGS) -o $(NAME) $(OBJECTS)
-
-%.o: %.cpp
-	$(CC) $(CCFLAGS) -c $< -o $@
+	$(CXX) $(CCFLAGS) -o $(NAME) $(OBJECTS)
 
 clean:
 	rm -f $(OBJECTS)

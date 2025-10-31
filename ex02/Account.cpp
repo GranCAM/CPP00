@@ -6,7 +6,7 @@
 /*   By: carbon-m <carbon-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 16:16:48 by carbon-m          #+#    #+#             */
-/*   Updated: 2025/10/29 18:36:32 by carbon-m         ###   ########.fr       */
+/*   Updated: 2025/10/31 13:45:43 by carbon-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,17 @@ void Account::_displayTimestamp (void)
 {
 	time_t		t;	
 	tm		*timeinfo;
+
 	t = std::time(0);
 	timeinfo = std::localtime(&t);
-	std::cout << "[" 
-	<< (timeinfo->tm_year + 1900) 
-	<< std::setw(2) << std::setfill('0') << (timeinfo->tm_mon + 1) 
-	<< std::setw(2) << std::setfill('0') << timeinfo->tm_mday
-	<< '_' 
-	<< std::setw(2) << std::setfill('0') << timeinfo->tm_hour
-	<< std::setw(2) << std::setfill('0') << timeinfo->tm_min
-	<< std::setw(2) << std::setfill('0') << timeinfo->tm_sec
-	<< "] ";
+	std::cout << "[" << (timeinfo->tm_year + 1900) 
+		<< std::setw(2) << std::setfill('0') << (timeinfo->tm_mon + 1) 
+		<< std::setw(2) << std::setfill('0') << timeinfo->tm_mday
+		<< '_' 
+		<< std::setw(2) << std::setfill('0') << timeinfo->tm_hour
+		<< std::setw(2) << std::setfill('0') << timeinfo->tm_min
+		<< std::setw(2) << std::setfill('0') << timeinfo->tm_sec
+		<< "] ";
 }
 
 int Account::getNbAccounts (void)
@@ -80,10 +80,10 @@ void Account::displayAccountsInfos (void)
 {
 	_displayTimestamp();
 	std::cout << "accounts:" << Account::getNbAccounts() << ";"
-	<< "total:" << Account::getTotalAmount() << ";"
-	<< "deposits:" << Account::getNbDeposits() << ";"
-	<< "withdrawals:" << Account::getNbWithdrawals() 
-	<< std::endl;
+		<< "total:" << Account::getTotalAmount() << ";"
+		<< "deposits:" << Account::getNbDeposits() << ";"
+		<< "withdrawals:" << Account::getNbWithdrawals() 
+		<< std::endl;
 }
 
 void	Account::makeDeposit( int deposit )
@@ -97,11 +97,11 @@ void	Account::makeDeposit( int deposit )
 	_totalNbDeposits++;
 	_displayTimestamp();
 	std::cout << "index:" << _accountIndex
-    << ";p_amount:" << OrigAmount
-    << ";deposit:" << deposit
-    << ";amount:" << _amount
-    << ";nb_deposits:" << _nbDeposits
-	<< std::endl;
+    	<< ";p_amount:" << OrigAmount
+    	<< ";deposit:" << deposit
+    	<< ";amount:" << _amount
+    	<< ";nb_deposits:" << _nbDeposits
+		<< std::endl;
 }
 
 bool	Account::makeWithdrawal( int withdrawal )
@@ -122,9 +122,9 @@ bool	Account::makeWithdrawal( int withdrawal )
 	_nbWithdrawals++;
 	_totalNbWithdrawals++;
     std::cout << ";withdrawal:" << withdrawal
-	<< ";amount:" << _amount
-    << ";nb_withdrawals:" << _nbWithdrawals
-	<< std::endl;
+		<< ";amount:" << _amount
+    	<< ";nb_withdrawals:" << _nbWithdrawals
+		<< std::endl;
 	return 1;
 }
 
@@ -137,8 +137,8 @@ void	Account::displayStatus( void ) const
 {
 	_displayTimestamp();
 	std::cout << "index:" << Account::_accountIndex << ";"
-	<< "amount:" << Account::_amount << ";"
-	<< "deposits:" << Account::_nbDeposits << ";"
-	<< "withdrawals:" << Account::_nbWithdrawals
-	<< std::endl;
+		<< "amount:" << Account::_amount << ";"
+		<< "deposits:" << Account::_nbDeposits << ";"
+		<< "withdrawals:" << Account::_nbWithdrawals
+		<< std::endl;
 }
